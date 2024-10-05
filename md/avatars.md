@@ -19,15 +19,17 @@ body를 전체 화면을 감싼다.
 
 아바타의 프로파일을 만들때, 원형 아이콘과 좌하단의 원형 상태 표시기를 구현하기위해, 다음과 같이 구성하였다.
 ~~~ html
-<div class="profile">
+<figure class="profile">
     <img class="circle-image" src="../assets/avatars/face1.jpg" alt="">
-    <div class="circle-statue online"></div>
-</div>
+    <div class="circle-status online"></div>
+    <figcaption>profile status online</figcaption>
+</figure>
 ~~~
 여기서 img는 인물 이미지를, div태그는 원형 상태 표시기로 활용하였다.
 
 여기서 상태표시기는, 이미지에 곂쳐서 표현되어야 하기 때문에,
-내무 div태그에 position 속성을 이용하여, 위치지정을 하였다.
+내부 div태그에 position 속성을 이용하여, 위치지정을 하였다.
+
 ~~~ css
 .profile {
     position: relative;
@@ -51,8 +53,20 @@ body를 전체 화면을 감싼다.
     border: #fff solid 1px;
 }
 
-.profile .circle-statue.online {
+.profile .circle-status.online {
     background-color: #4cfe88;
+}
+
+figcaption {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
 }
 ~~~
   
@@ -62,19 +76,20 @@ step 1에서 만든 프로필을 이용해서 과제의 화면과 같은 레이�
 
 ~~~ html
 <section class="avatar-list top">
-    <div class="profile">
+    <figure class="profile">
         <img class="circle-image" src="../assets/avatars/face1.jpg" alt="">
-        <div class="circle-statue online"></div>
-    </div>
-    <div class="profile">
+        <div class="circle-status online"></div>
+        <figcaption>profile status online</figcaption>
+    </figure>
+    <figure class="profile">
         ...
-    </div>
-    <div class="profile">
+    </figure>
+    <figure class="profile">
         ...
-    </div>
-    <div class="profile">
+    </figure>
+    <figure class="profile">
         ...
-    </div>
+    </figure>
 </section>
 <section class="avatar-list bottom">
     ...
@@ -141,7 +156,7 @@ main 섹션을 화면 정중앙에 배치한다.
     position: relative;
     width: 64px;
     height: 64px;
-    margin-right: 20px;
+    margin: 0px 20px 0px 0px;
 }
 
 ~~~
@@ -170,7 +185,7 @@ profile 요소에 float요소를 주어 inline으로 표현이 될 수 있도록
     position: relative;
     width: 64px;
     height: 64px;
-    margin-right: 20px;
+    margin: 0px 20px 0px 0px;
 }
 ~~~
 main 과 avatar-list 클래스를 가진 요소에 flex를 적용한다.
@@ -196,7 +211,7 @@ main 하위에 avatar-list가 있으므로 해당 요소들 또한 main의 flex�
         position: relative;
         width: 64px;
         height: 64px;
-        margin-right: 20px;
+        margin: 0px 20px 0px 0px;
     }
 }
 
@@ -212,7 +227,7 @@ main 하위에 avatar-list가 있으므로 해당 요소들 또한 main의 flex�
         position: relative;
         width: 64px;
         height: 64px;
-        margin-right: 20px;
+        margin: 0px 20px 0px 0px;
     }
 }
 ~~~
@@ -257,6 +272,7 @@ main 요소에 border요소를 추가하고, 상단 왼쪽 'avatar'라고 적혀
     padding: 5px;
     color: #8f8f8f;
     font-family: 'Courier New', Courier, monospace;
+    margin: 0;
 }
 ~~~
 

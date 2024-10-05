@@ -29,6 +29,19 @@ body {
     padding: 5px;
     color: #8f8f8f;
     font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+}
+
+figcaption {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
 }
 
 .caption p {
@@ -51,7 +64,7 @@ body {
         position: relative;
         width: 64px;
         height: 64px;
-        margin-right: 20px;
+        margin: 0px 20px 0px 0px;
     }
 }
 
@@ -67,7 +80,7 @@ body {
         position: relative;
         width: 64px;
         height: 64px;
-        margin-right: 20px;
+        margin: 0px 20px 0px 0px;
     }
 }
 
@@ -82,7 +95,7 @@ body {
     border-radius: 32px;
 }
 
-.profile .circle-statue {
+.profile .circle-status {
     position: absolute;
     bottom: 0%;
     right: 0%;
@@ -93,6 +106,6 @@ body {
     border: #fff solid 1px;
 }
 
-.profile .circle-statue.online {
+.profile .circle-status.online {
     background-color: #4cfe88;
 }
