@@ -1,0 +1,101 @@
+html {
+    height: 100%;
+}
+
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+.main {
+    position: absolute;
+    display:block;
+    width: fit-content;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    border: #dbdbdb solid 1px;
+    border-radius: 5px;
+    padding: 100px;
+}
+
+.caption {
+    position: absolute;
+    left: 0%;
+    top: -10%;
+    border: #dbdbdb solid 1px;
+    border-radius: 5px;
+    padding: 5px;
+    color: #8f8f8f;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.caption p {
+    margin: 0;
+}
+@supports (display:flex) {
+    .main{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .avatar-list {
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        margin: 10px 10px;
+    }
+
+    .profile {
+        position: relative;
+        width: 64px;
+        height: 64px;
+        margin-right: 20px;
+    }
+}
+
+@supports not (display:flex){
+    .avatar-list {
+        position: relative;
+        overflow: hidden;
+        margin-bottom: 20px;
+    }
+
+    .avatar-list:last-child {
+        margin: 0px;
+    }
+
+    .profile {
+        float: inline-start;
+        position: relative;
+        width: 64px;
+        height: 64px;
+        margin-right: 20px;
+    }
+}
+
+.profile:last-child {
+    margin: 0px;
+}
+
+.profile .circle-image {
+    width: 64px;
+    height: 64px;
+    object-fit: cover;
+    border-radius: 32px;
+}
+
+.profile .circle-statue {
+    position: absolute;
+    bottom: 0%;
+    right: 0%;
+    width: 16px;
+    height: 16px;
+    background-color: #dbdbdb;
+    border-radius: 10px;
+    border: #fff solid 1px;
+}
+
+.profile .circle-statue.online {
+    background-color: #4cfe88;
+}
