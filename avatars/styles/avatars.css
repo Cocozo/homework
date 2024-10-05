@@ -58,11 +58,7 @@ body {
     .avatar-list {
         position: relative;
         overflow: hidden;
-        margin-bottom: 20px;
-    }
-
-    .avatar-list:last-child {
-        margin: 0px;
+        margin: 10px 10px;
     }
 
     .profile {
