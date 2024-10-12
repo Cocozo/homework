@@ -172,7 +172,7 @@
     input[type="checkbox"]:checked + label {
         background: url(../../assets/login/checkbox_checked.svg) no-repeat;
     }
-    
+
     .ip-switch a {
         color: var(--standard-font-color);
         text-decoration: none;
