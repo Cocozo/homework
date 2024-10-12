@@ -1,1 +1,185 @@
-/* CSS를 활용하여 레이아웃 및 스타일링을 완성해주세요 */
+/* mordern reset 설정 */
+@import "../../common/modern-reset.css";
+
+:root {
+    --standard-font-size: 16px;
+    --standard-font-color: #121212;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+@media (min-width:768px) {
+    .main {
+        width: 500px;
+        inline-size: 500px;
+    }
+}
+
+@media (max-width:768px) {
+    .main {
+        width: 100%;
+        inline-size: 100%;
+    }
+}
+
+.main {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-inline: 1.25rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+}
+
+.main .logo {
+    width: 230px;
+    inline-size: 230px;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    margin-block: 5rem;
+}
+
+.login_section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+    @media (min-width: 768px) {
+        .bottom-wrapper {
+            justify-content: space-between;
+        }
+    }
+
+    @media (max-width: 768px) {
+
+        .bottom-wrapper {
+            justify-content: end;
+        }
+        .ip-switch {
+            display: none;
+        }
+    }
+    input[type="email"],
+    input[type="password"],
+    input[type="submit"] {
+        width: 100%;
+        inline-size: 100%;
+        height: 2.8125rem;
+        block-size: 2.8125rem;
+        padding-inline: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+        color: var(--standard-font-color);
+    }
+
+    input[type="email"],
+    input[type="password"]
+    {
+        font-size: calc(var(--standard-font-size) - 2px);
+        margin-top: 0.5rem;
+        margin-block-start: 0.5rem;
+        border: #dadada solid 1px;
+        background-color: #fff;
+
+    }
+
+    input[type="email"]:focus,
+    input[type="password"]:focus {
+        outline: none;
+        border: #03cf5d solid 1px;
+        background-color: #e9f0fd;
+    }
+
+    .error-email,
+    .error-password {
+        display: none;
+        width: 100%;
+        color: red;
+        font-size: 0.75rem;
+        padding-left: 0.5rem;
+        padding-inline-start: 0.5rem;
+        margin-top: 0.25rem;
+        margin-inline-start: 0.25rem;
+    }
+    
+    input[type="email"]:user-invalid + .error-email{
+        display: inline;
+    }
+
+    input[type="password"]:user-invalid + .error-password{
+        display: inline;
+    }
+
+    input[type="checkbox"] + label:focus,
+    input[type="submit"]:focus {
+        outline-color: #24388d;
+    }
+
+
+    input[type="submit"] {
+        font-size: va   r(--standard-font-size);
+        margin-top: 1.25rem;
+        margin-block-start: 1.25rem;
+
+        color: #fff;
+        background-color: #03cf5d;
+        border: none;
+    }
+
+    .bottom-wrapper {
+        width: 100%;
+        display: flex;
+        margin-top: .625rem;
+        margin-block-start: .625rem;
+    }
+
+    .checkbox-wrapper {
+        display: flex;
+        justify-content: end;
+    }
+
+    .checkbox-wrapper span {
+        text-align: center;
+        line-height: 1.5625rem;
+    }
+
+    input[type="checkbox"] {
+        display: none;
+    }
+
+    input[type="checkbox"] + label {
+        display: inline-block;
+        background: url(../../assets/login/checkbox_unchecked.svg) no-repeat;
+        width: 1.5rem;
+        height: 1.5rem;
+        cursor: pointer;
+        margin-right: .3125rem;
+        margin-inline-end: .3125rem;
+    }
+
+    input[type="checkbox"]:checked + label {
+        background: url(../../assets/login/checkbox_checked.svg) no-repeat;
+    }
+    
+    .ip-switch a {
+        color: var(--standard-font-color);
+        text-decoration: none;
+        
+        strong {
+            color: #dadada;
+        }
+    }
+
+}

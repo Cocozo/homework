@@ -4,8 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>naver | login</title>
+    <link rel="stylesheet" href="./styles/login.css">
 </head>
 <body>
-    
+    <section class="main">
+        <figure class="logo">
+            <img src="../assets/login/logo.svg" alt="네이버 로그">
+            <figcaption class="sr-only">naver logo</figcaption>
+        </figure>
+
+        <form action="" method="post" class="login_section">
+            <label class="sr-only" for="email">이메일</label> <input type="email" placeholder="아이디(이메일)" id="email" required>
+            <span class="error-email">아이디는 이메일 형식으로 입력해 주세요</span>
+            <label class="sr-only" for="password">패스워드</label> <input type="password" placeholder="비밀번호" id="password" required>
+            <span class="error-password">비밀번호는 10자리 이상으로 해주세요</span>
+            <label class="sr-only" for="login">로그인버튼</label> <input type="submit" value="로그인" id="login">
+            <div class="bottom-wrapper">
+                <div class="checkbox-wrapper">
+                    <input type="checkbox" name="" id="save_login">
+                    <label class="checkbox-label" for="save_login" tabindex="0"></label>
+                    <span>로그인 상태유지</span>
+                </div>
+                <div class="ip-switch">
+                    <span><a href="./pages/ip_security.html" target="_blank">IP보안 <strong>OFF</strong></a></span>
+                </div>
+            </div>
+        </form>
+    </section>
 </body>
 </html>
