@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Apple</title>
+    <link rel="icon" href="./favicon/apple-favicon.svg" />
+    <link rel="apple-touch-icon" href="./favicon/apple-favicon.svg" />
+    <link href="https://cdn.jsdelivr.net/gh/sun-typeface/SUIT/fonts/variable/woff2/SUIT-Variable.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles/apple.css" />
+  </head>
+  <body>
+    <!-- 카드 레이아웃 -->
+    <div class="main">
+      <section class="main-promotion">
+        <div class="card promotion">
+          <h1 class="headline">iPad Pro</h1>
+          <p class="subhead">놀라우리만치 얇다. <br/>엄청나게 강력하다.</p>
+          <p class="realse-date">출시일 추후 공개</p>
+          <div class="cta-links">
+            <a class="btn btn-primary">더 알아보기</a>
+            <a class="btn btn-second">가격 보기</a>
+          </div>
+          
+          <figure class="background pad-pro">
+            <figcaption class="sr-only">ipad image</figcaption>
+          </figure>
+        </div>
+  
+        <div class="card bright promotion">
+          <h1 class="headline">iPad air</h1>
+          <p class="subhead">두 가지 사이즈. 더 빠른 칩. <br/>무엇이든 거뜬하게.</p>
+          <div class="cta-links">
+            <a class="btn btn-primary bright">더 알아보기</a>
+            <a class="btn btn-second bright">가격 보기</a>
+          </div>
+          <figure class="background pad-air">
+            <figcaption class="sr-only">ipad pro image</figcaption>
+          </figure>
+        </div>
+  
+        <div class="card promotion">
+          <h1 class="headline">iPhone 15 Pro</h1>
+          <p class="subhead">티타늄. 초강력. 초경량. 초프로.</p>
+          <div class="cta-links">
+            <a class="btn btn-primary">더 알아보기</a>
+            <a class="btn btn-second">가격 보기</a>
+          </div>
+          <figure class="background phone-pro">
+            <figcaption class="sr-only">ipad air image</figcaption>
+          </figure>
+        </div>
+      </section>
+      <section class="main-hero">
+        <div class="card bright">
+          <h1 class="headline">iPhone 15</h1>
+          <p class="subhead">새로운 카메라. <br>새로운 디자인. <br>새로움이 물씬.</p>
+          <div class="cta-links">
+            <a class="btn btn-primary">더 알아보기</a>
+            <a class="btn btn-second">가격 보기</a>
+          </div>
+          
+          <figure class="background phone">
+            <figcaption class="sr-only">ipad image</figcaption>
+          </figure>
+        </div>
+
+        <div class="card">
+          <h1 class="headline">WATCH</h1>
+          <p class="subhead">보다 똑똑. 보다 또렷. 보다 강력.</p>
+          <div class="cta-links">
+            <a class="btn btn-primary">더 알아보기</a>
+            <a class="btn btn-second">가격 보기</a>
+          </div>
+          
+          <figure class="background watch">
+            <figcaption class="sr-only">ipad image</figcaption>
+          </figure>
+        </div>
+
+        <div class="card bright">
+          <h1 class="headline">MacBook Air</h1>
+          <p class="subhead">날렵하게. 강력하게 M3답게.</p>
+          <div class="cta-links">
+            <a class="btn btn-primary">더 알아보기</a>
+            <a class="btn btn-second">가격 보기</a>
+          </div>
+          
+          <figure class="background macbook-air">
+            <figcaption class="sr-only">ipad image</figcaption>
+          </figure>
+        </div>
+
+        <div class="card">
+          <h1 class="headline">airPods Pro</h1>
+          <p class="subhead">전에 없던 청취 경험. <br>적응형 오디오.</p>
+          <div class="cta-links">
+            <a class="btn btn-primary">더 알아보기</a>
+            <a class="btn btn-second">가격 보기</a>
+          </div>
+          
+          <figure class="background pod">
+            <figcaption class="sr-only">ipad image</figcaption>
+          </figure>
+        </div>
+      </section>
+    </div>
+  </body>
+
+  <script>
+      const RATIO = window.devicePixelRatio;
+
+      if(RATIO >= 2) {
+        console.log("high pixel density! change high quality image!")
+        const backgrounds = document.querySelectorAll(".background");
+        backgrounds.forEach((element) => {
+          element.classList.add("high-density");
+        });
+      }
+    </script>
+</html>

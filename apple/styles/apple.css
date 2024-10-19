@@ -1,0 +1,233 @@
+@import url(base.css);
+@import url(reset.css);
+@import url(theme.css);
+
+.main {
+    container-type: inline-size;
+    container-name: main;
+}
+
+/* 카드 레이아웃 */
+.main-promotion {
+    display: grid;
+    inline-size: 100%;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, var(--size));
+    gap: var(--small-spacing);
+    margin-bottom: var(--small-spacing);
+}
+
+.main-hero {
+    display: grid;
+    inline-size: 100%;
+    gap: var(--small-spacing);
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, var(--size));
+
+    @container main (inline-size > 64rem) {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, var(--size));
+    }
+    
+}
+
+
+/* @container main-hero(inline-size > 64rem) {
+    .main-hero {
+        display: grid;
+        
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, var(--size));
+    }
+} */
+
+.card {
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    color: var(--white);
+    
+    @container main (inline-size > 64rem) {
+        br {
+            display: none;
+        }
+    }
+
+    &.bright{
+        color: var(--black);
+
+        .btn-primary {
+            background-color: var(--black);
+        }
+
+        .btn-second {
+            border: var(--black) solid 1px;
+            color: var(--black);
+        }
+    }
+    
+    .headline {
+        font-weight: 700;
+        font-size: var(--large-text);
+        margin-top: var(--large-spacing);
+        z-index: 1;
+        text-align: center;
+
+        @container main (inline-size > 64rem) {
+            /* margin-top: var(--extra-large-spacing); */
+            font-size: var(--extra-large-text);
+        }
+    }
+    
+    .subhead {
+        display: block;
+        font-size: var(--base-text);
+        margin-top: var(--small-spacing);
+        z-index: 1;
+        line-height: var(--line-normal);
+        text-align: center;
+
+        @container main (inline-size > 64rem) {
+            font-size: var(--medium-text);
+        }
+    }
+
+    .realse-date {
+        display: block;
+        font-size: var(--small-text);
+        margin-top: var(--small-spacing);
+        color: var(--gray);
+        z-index: 1;
+        text-align: center;
+    }
+
+    .cta-links {
+        color: var(--blue-300);
+        display: flex;
+        gap: var(--small-spacing);
+        margin-top: var(--base-spacing);
+        z-index: 1;
+    }
+
+
+    .btn {
+        display: block;
+        font-size: var(--xx-small-text);
+        padding: var(--x-small-spacing) var(--small-spacing);
+        border-radius: 1.25rem;
+        z-index: 1;
+
+        @container main (inline-size > 64rem) {
+            font-size: var(--x-small-text);
+        }
+    }
+
+    .btn-primary {
+        color: var(--white);
+        background-color: var(--blue-300);
+        margin: 1px;
+    }
+    
+    .btn-second {
+        border: var(--blue-300) solid 1px;
+        color: var(--blue-300);
+    }
+
+    .background {
+        
+        display: block;
+        position: absolute;
+        left: 0;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        height: 110%;
+        width: 100%;
+        z-index: 0;
+        
+        &.pad-air {
+            background-image: url(../../assets/apple/ipad_air.jpeg);
+
+            @container main (inline-size > 64rem) {
+                background-image: url(../../assets/apple/ipad_air_wide.jpeg);
+            }
+        }
+
+        &.pad-pro {
+            background-image: url(../../assets/apple/ipad_pro.jpeg);
+
+             @container main (inline-size > 64rem) {
+                background-image: url(../../assets/apple/ipad_pro_wide.jpeg);
+            }
+        }
+
+        &.phone-pro {
+            background-image: url(../../assets/apple/iphone15_pro.jpeg);
+
+             @container main (inline-size > 64rem) {
+                background-image: url(../../assets/apple/iphone15_pro_wide.jpeg);
+            }
+        }
+
+        &.phone {
+            background-image: url(../../assets/apple/iphone15.jpeg);
+        }
+
+        &.watch {
+            background-image: url(../../assets/apple/apple_watch.jpeg);
+        }
+
+        &.macbook-air {
+            background-image: url(../../assets/apple/macbook_air.jpeg);
+        }
+
+        &.pod {
+            background-image: url(../../assets/apple/airpods_pro.jpeg);
+        }
+
+
+        &.pad-air.high-density {
+            background-image: url(../../assets/apple/ipad_air_2x.jpeg);
+
+            @container main (inline-size > 64rem) {
+                background-image: url(../../assets/apple/ipad_air_wide_2x.jpeg);
+            }
+        }
+
+        &.pad-pro.high-density {
+            background-image: url(../../assets/apple/ipad_pro_2x.jpeg);
+
+             @container main (inline-size > 64rem) {
+                background-image: url(../../assets/apple/ipad_pro_wide_2x.jpeg);
+            }
+        }
+
+        &.phone-pro.high-density {
+            background-image: url(../../assets/apple/iphone15_pro_2x.jpeg);
+
+             @container main (inline-size > 64rem) {
+                background-image: url(../../assets/apple/iphone15_pro_wide_2x.jpeg);
+            }
+        }
+
+        &.phone.high-density {
+            background-image: url(../../assets/apple/iphone15_2x.jpeg);
+        }
+
+        &.watch.high-density {
+            background-image: url(../../assets/apple/apple_watch_2x.jpeg);
+        }
+
+        &.macbook-air.high-density {
+            background-image: url(../../assets/apple/macbook_air_2x.jpeg);
+        }
+
+        &.pod.high-density {
+            background-image: url(../../assets/apple/airpods_pro_2x.jpeg);
+        }
+    }
+
+}
